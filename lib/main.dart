@@ -1,3 +1,4 @@
+import 'package:book_app/Core/bloc_observer/bloc_observer.dart';
 import 'package:book_app/Core/utilities/app_router.dart';
 import 'package:book_app/Core/utilities/constants.dart';
 import 'package:book_app/Core/utilities/services_locator.dart';
@@ -22,12 +23,16 @@ Future<Box> openHiveBox(String boxname) async {
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-    mybox = await openHiveBox('personinfo');
+  mybox = await openHiveBox('personinfo');
   SetupServicesLocator();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const BooklyApp());
+ Bloc.observer = AppBlocObserver();
+ runApp(const BooklyApp());
+  
+  
+ 
 }
 
 class BooklyApp extends StatelessWidget {
