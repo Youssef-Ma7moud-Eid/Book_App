@@ -7,7 +7,7 @@ import 'package:get_it/get_it.dart';
 final getIt = GetIt.instance; //  انشاء نسخه
 
 void
-    SetupServicesLocator() //  انشاء  الاشياء (methodes & objects  & services)الي محتاج اعمل نسخ  كتير ف التطبيق منها
+    setupServicesLocator() //  انشاء  الاشياء (methodes & objects  & services)الي محتاج اعمل نسخ  كتير ف التطبيق منها
 {
   getIt.registerSingleton<ApisServices>(
     ApisServices(

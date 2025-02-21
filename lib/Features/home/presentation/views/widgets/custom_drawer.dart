@@ -1,4 +1,3 @@
-
 import 'package:book_app/Core/utilities/app_router.dart';
 import 'package:book_app/Features/Auth/data/repo/repo_implement.dart';
 import 'package:book_app/main.dart';
@@ -6,20 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
-class CustomDrawer extends StatefulWidget {
+class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _CustomDrawerState createState() => _CustomDrawerState();
-}
-
-class _CustomDrawerState extends State<CustomDrawer> {
-  bool _isDarkMode = false; // Initial theme state
-
-  @override
   Widget build(BuildContext context) {
-    var name = mybox!.get("person");
+  
+    var name =
+        mybox!.get("person") ?? ["User", "user@example.com"]; // Default values
+
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -50,36 +44,17 @@ class _CustomDrawerState extends State<CustomDrawer> {
             leading: Icon(Icons.shopping_cart_outlined),
             title: Text(
               'Shopping',
-              style: TextStyle(
-                fontSize: 19,
-                fontWeight: FontWeight.w500,
-              ),
+              style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),
             ),
           ),
           ListTile(
             leading: Icon(Icons.favorite),
             title: Text(
               'Favorite',
-              style: TextStyle(
-                fontSize: 19,
-                fontWeight: FontWeight.w500,
-              ),
+              style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),
             ),
           ),
-          ListTile(
-            leading: Icon(Icons.lightbulb),
-            title: Text('Dark Mode'),
-            trailing: Switch(
-              value: _isDarkMode,
-              onChanged: (value) {
-                setState(() {
-                  _isDarkMode = value;
-                  // You can add your theme change logic here
-                  // For example, using a provider to change the theme
-                });
-              },
-            ),
-          ),
+         
           Divider(),
           GestureDetector(
             onTap: () async {
@@ -91,25 +66,19 @@ class _CustomDrawerState extends State<CustomDrawer> {
               leading: Icon(Icons.delete),
               title: Text(
                 'Delete Account',
-                style: TextStyle(
-                  fontSize: 19,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),
               ),
             ),
           ),
           GestureDetector(
             onTap: () {
-                SystemNavigator.pop();
+              SystemNavigator.pop();
             },
             child: ListTile(
               leading: Icon(Icons.exit_to_app),
               title: Text(
                 'Exit',
-                style: TextStyle(
-                  fontSize: 19,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
               ),
             ),
           ),
