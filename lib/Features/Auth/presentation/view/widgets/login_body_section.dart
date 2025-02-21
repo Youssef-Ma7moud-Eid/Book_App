@@ -102,8 +102,7 @@ class _LoginBodySectionState extends State<LoginBodySection> {
                               confirmBtnText: 'OK',
                               onConfirmBtnTap: () async {
                                 Navigator.of(context).pop();
-                                await Future.delayed(
-                                    Duration(milliseconds: 300));
+                               
                                 GoRouter.of(context).push(AppRouter.kHomeView);
                               });
                         } else {

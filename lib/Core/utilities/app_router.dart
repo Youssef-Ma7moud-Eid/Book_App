@@ -1,5 +1,4 @@
 // ignore_for_file: unnecessary_null_in_if_null_operators
-
 import 'package:book_app/Core/utilities/services_locator.dart';
 import 'package:book_app/Features/Auth/presentation/view/login_view.dart';
 import 'package:book_app/Features/Auth/presentation/view/sign_up_view.dart';
@@ -9,6 +8,7 @@ import 'package:book_app/Features/home/data/repos/home_repo_implent.dart';
 import 'package:book_app/Features/home/presentation/manager/similar_books_cubit/cubit/similar_books_cubit.dart';
 import 'package:book_app/Features/home/presentation/views/book_details_view.dart';
 import 'package:book_app/Features/home/presentation/views/home_view.dart';
+import 'package:book_app/Features/home/presentation/views/shooping_view.dart';
 import 'package:book_app/Features/onboarding_screen/presentation/views/boarding_screen_view.dart';
 import 'package:book_app/Features/search/data/repos/search_repo_implement.dart';
 import 'package:book_app/Features/search/presentation/manager/search_item_books_cubit.dart/search_item_books_cubit.dart';
@@ -25,6 +25,7 @@ abstract class AppRouter {
   static const konboardingview = '/OnBoarding';
   static const kloginview = '/Login';
    static const ksignupview = '/Signup';
+    static const kshoppingview = '/Shopping';
   static final GoRouter router = GoRouter(
     routes: <RouteBase>[
       GoRoute(
@@ -55,6 +56,12 @@ abstract class AppRouter {
         path: kHomeView,
         builder: (BuildContext context, GoRouterState state) {
           return HomeView();
+        },
+      ),
+         GoRoute(
+        path: kshoppingview,
+        builder: (BuildContext context, GoRouterState state) {
+          return ShoppingView();
         },
       ),
       GoRoute(

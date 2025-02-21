@@ -96,8 +96,7 @@ class _SignBodySectionState extends State<SignBodySection> {
                               confirmBtnText: 'OK',
                               onConfirmBtnTap: () async {
                                 Navigator.of(context).pop();
-                                await Future.delayed(
-                                    Duration(milliseconds: 100));
+                               
 
                                 GoRouter.of(context)
                                     .pushReplacement(AppRouter.kloginview);

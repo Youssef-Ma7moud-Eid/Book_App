@@ -28,7 +28,9 @@ class CustomAppBarBookDetails extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              
+            },
             icon: Icon(
               Icons.shopping_cart_outlined,
               size: 28,

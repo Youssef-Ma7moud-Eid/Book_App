@@ -45,6 +45,8 @@ dependencies:
   go_router: ^14.7.2
   google_fonts: ^6.2.1
   hive: ^2.2.3
+  image_picker: ^1.1.2
+  path: ^1.9.0
   path_provider: ^2.1.5
   percent_indicator: ^4.2.4
   quickalert: ^1.1.0
