@@ -14,7 +14,7 @@ class BookDatailsViewBody extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          CustomAppBarBookDetails(),
+          CustomAppBarBookDetails(model: bookModel),
           BookdetailsSection(
             bookModel: bookModel,
           ),

@@ -7,6 +7,7 @@ import 'package:book_app/Core/utilities/app_router.dart';
 import 'package:book_app/Core/utilities/helper/cache.dart';
 import 'package:book_app/Core/utilities/services_locator.dart';
 import 'package:book_app/Features/home/data/repos/home_repo_implent.dart';
+import 'package:book_app/Features/home/presentation/manager/add_shopping_cart_cubit.dart/add_shopping_cart_cubit.dart';
 import 'package:book_app/Features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:book_app/Features/home/presentation/manager/newest%20books%20cubit/newest_books_cubit.dart';
 import 'package:book_app/firebase_options.dart';
@@ -46,6 +47,9 @@ class BooklyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => ThemeCubit(),
+        ),
+         BlocProvider(
+          create: (context) => AddShoppingCartCubit(),
         ),
         BlocProvider(
           create: (context) => Featuredbookcubit(

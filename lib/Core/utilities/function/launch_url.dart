@@ -1,4 +1,5 @@
 import 'package:book_app/Core/utilities/snak_bar.dart';
+import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 Future<void> launchCustomUrl(context, String? url) async {
@@ -8,7 +9,8 @@ Future<void> launchCustomUrl(context, String? url) async {
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
     } else {
-      showSnakBar(context, "Cantnot launch $url");
+    
+      scaffoldmessenger(context: context, text: "Cantnot launch $url", color: Colors.green);
     }
   }
 }

@@ -1,9 +1,13 @@
+import 'package:book_app/Core/utilities/snak_bar.dart';
+import 'package:book_app/Features/home/data/models/book_model/book.model.dart';
+import 'package:book_app/Features/home/presentation/manager/add_shopping_cart_cubit.dart/add_shopping_cart_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomAppBarBookDetails extends StatelessWidget {
-  const CustomAppBarBookDetails({super.key});
-
+  const CustomAppBarBookDetails({super.key, required this.model});
+  final BookModel model;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -19,7 +23,6 @@ class CustomAppBarBookDetails extends StatelessWidget {
         children: [
           IconButton(
             onPressed: () {
-          
               GoRouter.of(context).pop();
             },
             icon: Icon(
@@ -29,7 +32,9 @@ class CustomAppBarBookDetails extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              
+              scaffoldmessenger(context: context, text: 'Add book successful', color: Colors.green);
+              BlocProvider.of<AddShoppingCartCubit>(context).addBooks(model);
+                BlocProvider.of<AddShoppingCartCubit>(context).getBooks();
             },
             icon: Icon(
               Icons.shopping_cart_outlined,
